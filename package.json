@@ -2,12 +2,18 @@
   "name": "devops-pipelines",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "run": "node index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "dev": "node --watch src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
 }
