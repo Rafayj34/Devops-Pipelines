@@ -1,0 +1,12 @@
+import { z } from 'zod';
+
+export const signUpSchema = z.object({
+  name: z.string().min(2, 'Name is required').trim(),
+  email: z.email().max(255).toLowerCase().trim(),
+  password: z.string().min(6, 'Password must be at least 6 characters long').max(128),
+  role: z.enum(['user', 'admin']).default('user'),
+});
+export const signInSchema = z.object({
+  email: z.email().max(255).toLowerCase().trim(),
+  password: z.string().min(6, 'Password must be at least 6 characters long').max(128),
+});
